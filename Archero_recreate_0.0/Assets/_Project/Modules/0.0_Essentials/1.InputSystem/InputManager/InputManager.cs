@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
     public bool jump = false;
     public bool sprint = false;
     public bool analogMovement = false;
+    public bool gamePaused = false;
     private void Start()
     {
 
@@ -20,6 +21,7 @@ public class InputManager : MonoBehaviour
         _inputReader.LookEvent += OnLook;
         _inputReader.JumpEvent += OnJump;
         _inputReader.SprintEvent += OnSprint;
+        _inputReader.PauseEvent += OnPause;
     }
     private void OnApplicationQuit()
     {
@@ -27,6 +29,7 @@ public class InputManager : MonoBehaviour
         _inputReader.LookEvent -= OnLook;
         _inputReader.JumpEvent -= OnJump;
         _inputReader.SprintEvent -= OnSprint;
+        _inputReader.PauseEvent -= OnPause;
     }
     #endregion
 
@@ -35,5 +38,6 @@ public class InputManager : MonoBehaviour
     public void OnLook(Vector2 dir) => look = dir;
     public void OnJump(bool state) => jump = state;
     public void OnSprint(bool newSprintState) => sprint = newSprintState;
+    public void OnPause() => gamePaused = !gamePaused;
     #endregion
 }

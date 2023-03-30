@@ -15,7 +15,7 @@ public class InputReader : ScriptableObject, ActionMap.IPlayerActions, ActionMap
     public event Action<Vector2> LookEvent;
     public event Action<bool> JumpEvent;
     public event Action<bool> SprintEvent;
-    public event Action SubmitEvent;
+    public event Action PauseEvent;
 
     public void Activate()
     {
@@ -36,10 +36,9 @@ public class InputReader : ScriptableObject, ActionMap.IPlayerActions, ActionMap
     // on default 3 Invokes: Started->Performed->Canceled
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            JumpEvent?.Invoke(true);
-        }
+        if (context.phase == InputActionPhase.Performed) JumpEvent?.Invoke(true);
+        else if (context.phase == InputActionPhase.Canceled) JumpEvent?.Invoke(false);
+
     }
 
     public void OnSprint(InputAction.CallbackContext context)
@@ -48,12 +47,9 @@ public class InputReader : ScriptableObject, ActionMap.IPlayerActions, ActionMap
         if (context.phase == InputActionPhase.Canceled) SprintEvent.Invoke(context.performed);
     }
 
-    public void OnSubmit(InputAction.CallbackContext context)
+    public void OnPause(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed)
-        {
-            SubmitEvent?.Invoke();
-        }
+        if (context.phase == InputActionPhase.Performed) PauseEvent.Invoke();
     }
     #endregion
 }
