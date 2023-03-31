@@ -11,7 +11,6 @@ public class InputManager : MonoBehaviour
     public Vector2 look = new Vector2();
     public bool jump = false;
     public bool sprint = false;
-    //public bool analogMovement = false;
     public bool gamePaused = false;
     public bool test = false;
     private void Start()
