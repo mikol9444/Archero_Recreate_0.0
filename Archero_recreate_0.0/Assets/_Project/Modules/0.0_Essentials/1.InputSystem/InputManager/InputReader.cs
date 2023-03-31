@@ -16,6 +16,8 @@ public class InputReader : ScriptableObject, ActionMap.IPlayerActions, ActionMap
     public event Action<bool> JumpEvent;
     public event Action<bool> SprintEvent;
     public event Action PauseEvent;
+    public event Action<bool> TestEvent;
+
 
     public void Activate()
     {
@@ -43,13 +45,19 @@ public class InputReader : ScriptableObject, ActionMap.IPlayerActions, ActionMap
 
     public void OnSprint(InputAction.CallbackContext context)
     {
-        if (context.phase == InputActionPhase.Performed) SprintEvent.Invoke(context.performed);
-        if (context.phase == InputActionPhase.Canceled) SprintEvent.Invoke(context.performed);
+        if (context.phase == InputActionPhase.Performed) SprintEvent.Invoke(true);
+        if (context.phase == InputActionPhase.Canceled) SprintEvent.Invoke(false);
     }
 
     public void OnPause(InputAction.CallbackContext context)
     {
         if (context.phase == InputActionPhase.Performed) PauseEvent.Invoke();
+    }
+
+    public void OnTest(InputAction.CallbackContext context)
+    {
+        if (context.phase == InputActionPhase.Performed) TestEvent.Invoke(true);
+        else if (context.phase == InputActionPhase.Canceled) TestEvent.Invoke(false);
     }
     #endregion
 }
