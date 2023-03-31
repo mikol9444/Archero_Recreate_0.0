@@ -13,7 +13,7 @@ public class InputManager : MonoBehaviour
     public bool sprint = false;
     //public bool analogMovement = false;
     public bool gamePaused = false;
-    public bool isTestingFunction = false;
+    public bool test = false;
     private void Start()
     {
 
@@ -42,6 +42,6 @@ public class InputManager : MonoBehaviour
     public void OnJump(bool state) => jump = state;
     public void OnSprint(bool newSprintState) => sprint = newSprintState;
     public void OnPause() => gamePaused = !gamePaused;
-    public void OnTest(bool testing) => isTestingFunction = testing;
+    public void OnTest(bool testing) => test = testing;
     #endregion
 }
