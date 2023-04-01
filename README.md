@@ -5,4 +5,4 @@ The purpose of this project is to demonstrate my skills in game development and 
 
 Features:
 
-Real-time combat against waves of enemies Procedurally generated levels with increasing difficulty Character progression through loot drops and skill upgrades Multiple playable characters with unique abilities In-game shop to purchase upgrades and new gear Sound effects and background music Please feel free to use and modify the code as needed for your own learning purposes. Contributions and feedback are welcome!
+Real-time combat against waves of enemies Procedurally generated levels with increasing difficulty Character progression through loot drops and skill upgrades Multiple playable characters with unique abilities In-game shop to purchase upgrades and new gear Sound effects and background music. Contributions and feedback are welcome!
