@@ -62,6 +62,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   gamePaused: 0
+  test: 0
 --- !u!223 &6618632173025058347
 Canvas:
   m_ObjectHideFlags: 0
@@ -408,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 8869479599008387369, guid: 5e7997d62a9726a41b189b71ee435ee8,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 8869479599008387369, guid: 5e7997d62a9726a41b189b71ee435ee8,
         type: 3}
@@ -418,7 +419,7 @@ PrefabInstance:
     - target: {fileID: 8869479599008387369, guid: 5e7997d62a9726a41b189b71ee435ee8,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 8869479599008387369, guid: 5e7997d62a9726a41b189b71ee435ee8,
         type: 3}

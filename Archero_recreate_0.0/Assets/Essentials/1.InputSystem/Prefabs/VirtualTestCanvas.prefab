@@ -59,7 +59,7 @@ MonoBehaviour:
   jump: 0
   sprint: 0
   gamePaused: 0
-  isTestingFunction: 0
+  test: 0
 --- !u!223 &4800506003926423676
 Canvas:
   m_ObjectHideFlags: 0
@@ -244,27 +244,39 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7600471293569158836, guid: 4d222d9062c8fad49be7820d67e99df3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600471293569158836, guid: 4d222d9062c8fad49be7820d67e99df3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600471293569158836, guid: 4d222d9062c8fad49be7820d67e99df3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600471293569158836, guid: 4d222d9062c8fad49be7820d67e99df3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SpawnCube
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600471293569158836, guid: 4d222d9062c8fad49be7820d67e99df3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: testSpawner, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600471293569158836, guid: 4d222d9062c8fad49be7820d67e99df3,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1581907115, guid: 4d222d9062c8fad49be7820d67e99df3, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4d222d9062c8fad49be7820d67e99df3, type: 3}
---- !u!1 &193808718024261208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 754568338386939478, guid: 4d222d9062c8fad49be7820d67e99df3,
-    type: 3}
-  m_PrefabInstance: {fileID: 632843603222908942}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1276503475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 193808718024261208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d54531977ecb194c95e2d3aa7a5d72a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_ControlPath: <Keyboard>/t
 --- !u!224 &193808718024261209 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 754568338386939479, guid: 4d222d9062c8fad49be7820d67e99df3,
