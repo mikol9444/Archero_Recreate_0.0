@@ -16,10 +16,6 @@ public class ObjectPooler : MonoBehaviour
     }
     public void TestFunction(bool status)
     {
-        if (!status)
-        {
-            PoolObject("default");
-        }
     }
 
     private void OnEnable()
