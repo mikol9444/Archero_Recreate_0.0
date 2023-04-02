@@ -5,6 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     #region Initialization/Subscribtion 
+    public static InputManager Instance;
     public InputReader _inputReader;
     [Header("Input Values")]
     public Vector2 move = new Vector2();
@@ -13,6 +14,10 @@ public class InputManager : MonoBehaviour
     public bool sprint = false;
     public bool gamePaused = false;
     public bool test = false;
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
 
