@@ -147,7 +147,7 @@
                     "id": "4972e45f-ce99-4236-8e37-ae9ba4d58ef6",
                     "path": "<Gamepad>/leftStick",
                     "interactions": "",
-                    "processors": "StickDeadzone",
+                    "processors": "StickDeadzone(min=0.05)",
                     "groups": "",
                     "action": "WASD",
                     "isComposite": false,

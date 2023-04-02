@@ -35,7 +35,7 @@ public class AudioManager_Test : MonoBehaviour
         // Create audio sources
         loopSouce = gameObject.AddComponent<AudioSource>();
         loopSouce.clip = loopClip;
-        loopSouce.loop = true;
+        loopSouce.loop = false;
 
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.clip = musicClip;
@@ -59,16 +59,17 @@ public class AudioManager_Test : MonoBehaviour
 
     public void ToggleLoop()
     {
-        isLoopOn = !isLoopOn;
+        PlayLoop();
+        // isLoopOn = !isLoopOn;
 
-        if (isLoopOn)
-        {
-            PlayLoop();
-        }
-        else
-        {
-            StopLoop();
-        }
+        // if (isLoopOn)
+        // {
+        //     PlayLoop();
+        // }
+        // else
+        // {
+        //     StopLoop();
+        // }
     }
     private void PlayMusic()
     {
