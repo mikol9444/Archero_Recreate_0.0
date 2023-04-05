@@ -130,7 +130,7 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
+        //        _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
         _animator = GetComponentInChildren<Animator>();
         _hasAnimator = _animator;
         _controller = GetComponent<CharacterController>();
@@ -157,10 +157,10 @@ public class PlayerController : MonoBehaviour
         Move();
     }
 
-    private void LateUpdate()
-    {
-        CameraRotation();
-    }
+    // private void LateUpdate()
+    // {
+    //     CameraRotation();
+    // }
     #endregion
 
     #region Core MoveMent

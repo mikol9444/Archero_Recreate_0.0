@@ -46,6 +46,8 @@ public class AudioManager_Test : MonoBehaviour
         ambientSource.loop = true;
 
         oneShotSource = gameObject.AddComponent<AudioSource>();
+        PlayMusic();
+        PlayAmbient();
     }
     private void PlayLoop()
     {

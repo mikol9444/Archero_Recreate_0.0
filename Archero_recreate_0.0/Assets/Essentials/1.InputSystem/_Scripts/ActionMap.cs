@@ -58,7 +58,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                     ""name"": ""Sprint"",
                     ""type"": ""Value"",
                     ""id"": ""e983c76d-f6e4-40a9-a106-415754f052e0"",
-                    ""expectedControlType"": ""Vector2"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
@@ -200,7 +200,7 @@ public partial class @ActionMap : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""e39fdf81-58cf-497f-9095-490e2a615f02"",
-                    ""path"": ""<Keyboard>/f"",
+                    ""path"": ""<Keyboard>/numpadEnter"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
