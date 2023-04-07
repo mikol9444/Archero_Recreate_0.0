@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pistol_test : Weapon_test
+public class Gewehr_test : Weapon_test
 {
     public GameObject projectilePrefab;
-    public Pistol_test()
+    public Gewehr_test()
     {
-        fireRate = 0.5f;
+        fireRate = 0.15f;
         damageType = new DamageType(10f, true);
     }
     private void Start()
@@ -20,8 +20,8 @@ public class Pistol_test : Weapon_test
         base.Shoot();
         //Instantiate(projectilePrefab, shootingPoint.position, transform.parent.rotation);
 
-        SpawnObjectFromPool("Projectile_Pi");
-        AudioManager_Test.instance.PlaySound("Shot");
+        SpawnObjectFromPool("Projectile_Ge");
+        AudioManager_Test.instance.PlaySound("Shoot");
 
     }
     public override GameObject SpawnObjectFromPool(string poolName)

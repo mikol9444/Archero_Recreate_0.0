@@ -241,6 +241,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LookingJoystick
       objectReference: {fileID: 0}
+    - target: {fileID: 5240417359897593103, guid: 162379d761964e54a8ee378b04a297e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 162379d761964e54a8ee378b04a297e6, type: 3}
 --- !u!224 &5754110195660707179 stripped

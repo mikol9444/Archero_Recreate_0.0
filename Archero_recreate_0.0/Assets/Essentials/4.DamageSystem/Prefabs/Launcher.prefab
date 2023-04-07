@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111073388444032350}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.023000002, y: 0.14699996, z: 0.157}
-  m_LocalScale: {x: 0.41035998, y: 0.19921336, z: 0.41035998}
+  m_LocalPosition: {x: 0.023000002, y: 0.14699996, z: 0.29}
+  m_LocalScale: {x: 0.41035998, y: 0.3464121, z: 0.41035998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3689892224098323410}
@@ -259,8 +259,8 @@ Transform:
   m_GameObject: {fileID: 3689892225417989115}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.25, y: 0.75199986, z: -1.25}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 1
+  m_LocalScale: {x: 1.464786, y: 1.8057967, z: 2.2122}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3689892224098323410}
   - {fileID: 2629517099664941656}
@@ -279,14 +279,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8eb86957dcf490428e6f7a9c52b5b68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.5
+  fireRate: 5
   damageType:
     damageAmount: 10
     isPhysical: 1
+  bulletSpeed: 15
+  damage: 0
+  shootingPoint: {fileID: 2629517099664941656}
   projectilePrefab: {fileID: 3905092305030167506, guid: 27ec0cdd3506c414581777e01643ad34,
     type: 3}
-  shootingPoint: {fileID: 2629517099664941656}
-  bulletSpeed: 15
 --- !u!1 &8964545918835539416
 GameObject:
   m_ObjectHideFlags: 0

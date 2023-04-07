@@ -298,10 +298,11 @@ MonoBehaviour:
   damageType:
     damageAmount: 5
     isPhysical: 0
+  bulletSpeed: 10
+  damage: 0
+  shootingPoint: {fileID: 2313627583245405158}
   projectilePrefab: {fileID: 7549440216999987439, guid: 97b08e2547cf04748ac03f6795521c6b,
     type: 3}
-  shootingPoint: {fileID: 2313627583245405158}
-  bulletSpeed: 10
   numBullets: 5
   spreadAngle: 30
 --- !u!1 &3972906236659033956

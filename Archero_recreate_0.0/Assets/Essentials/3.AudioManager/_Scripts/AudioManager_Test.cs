@@ -37,7 +37,7 @@ public class AudioManager_Test : MonoBehaviour
             audioFiles[i].audioSource.loop = audioFiles[i].loop;
         }
         PlaySound("Ambient");
-        PlaySound("Journey");
+        PlaySound("Music");
     }
 
     public void PlaySound(string name)

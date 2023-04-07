@@ -5,8 +5,7 @@ using UnityEngine;
 public class Launcher_test : Weapon_test
 {
     public GameObject projectilePrefab;
-    public Transform shootingPoint;
-    public float bulletSpeed = 15f;
+
     public Launcher_test()
     {
         fireRate = 0.5f;
@@ -26,15 +25,16 @@ public class Launcher_test : Weapon_test
         AudioManager_Test.instance.PlaySound("Rocket");
 
     }
-    public void SpawnObjectFromPool(string poolName)
+    public override GameObject SpawnObjectFromPool(string poolName)
     {
         GameObject obj = ObjectPooler.Instance.PoolObject(poolName); ;
         if (obj)
         {
             obj.transform.position = shootingPoint.position;
-            obj.transform.rotation = transform.rotation;
+            obj.transform.forward = transform.forward;
             obj.GetComponent<Projectile>().SetVelocity(transform.forward * bulletSpeed);
         }
+        return obj;
     }
     public override void Reload()
     {

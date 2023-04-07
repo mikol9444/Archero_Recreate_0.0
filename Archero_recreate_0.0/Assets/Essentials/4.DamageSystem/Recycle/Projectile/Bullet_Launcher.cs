@@ -4,19 +4,18 @@ using UnityEngine;
 
 public class Bullet_Launcher : Projectile
 {
-    public Bullet_Launcher()
-    {
-        speed = 5f;
-        damage = 50;
-    }
     public override void Fire()
     {
-        //throw new System.NotImplementedException();
+        base.Fire();
     }
 
-    public override void Start()
+    public override void OnEnable()
     {
-        base.Start();
+        base.OnEnable();
+    }
+    public override void OnDisable()
+    {
+        base.OnDisable();
     }
 
     protected override void OnTriggerEnter(Collider other)

@@ -3,16 +3,32 @@ using System.Collections.Generic;
 using UnityEngine;
 public abstract class Projectile : MonoBehaviour
 {
-    [SerializeField] protected float speed;
-    [SerializeField] protected float damage;
-    private Rigidbody rb;
 
-    public abstract void Fire();
-    public virtual void Start()
+
+    protected Rigidbody rb;
+    public virtual void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    public virtual void Fire()
+    {
+        Debug.Log($"fire {gameObject.name}");
+    }
+    public virtual void Stop()
+    {
+        Debug.Log($"Stop {gameObject.name}");
+    }
+    public virtual void OnEnable()
     {
         Fire();
     }
-    public void SetVelocity(Vector3 dir) => GetComponent<Rigidbody>().velocity = dir;
+    public virtual void OnDisable()
+    {
+        Stop();
+    }
+
+    public virtual void SetVelocity(Vector3 dir) => rb.velocity = dir;
     protected virtual void OnTriggerEnter(Collider other)
     {
         // Code for handling collision with another object goes here

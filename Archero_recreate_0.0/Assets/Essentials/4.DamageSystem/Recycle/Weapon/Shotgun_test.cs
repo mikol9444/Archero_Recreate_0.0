@@ -5,8 +5,6 @@ using UnityEngine;
 public class Shotgun_test : Weapon_test
 {
     public GameObject projectilePrefab;
-    public Transform shootingPoint;
-    public float bulletSpeed = 10f;
     public int numBullets = 5;
     public float spreadAngle = 30f;
 
@@ -33,21 +31,23 @@ public class Shotgun_test : Weapon_test
         {
             float angle = startAngle + i * angleStep;
             Quaternion rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + angle, transform.eulerAngles.z);
-            SpawnObjectFromPool("Projectile_Sh", rotation);
-        }
-
-        AudioManager_Test.instance.PlaySound("Shoot");
-    }
-
-    public void SpawnObjectFromPool(string poolName, Quaternion rotation)
-    {
-        GameObject obj = ObjectPooler.Instance.PoolObject(poolName); ;
-        if (obj)
-        {
-            obj.transform.position = shootingPoint.position;
+            GameObject obj = SpawnObjectFromPool("Projectile_Sh");
             obj.transform.rotation = rotation;
             obj.GetComponent<Projectile>().SetVelocity(obj.transform.forward * bulletSpeed);
         }
+
+        AudioManager_Test.instance.PlaySound("Shoot2");
+    }
+    public override GameObject SpawnObjectFromPool(string poolName)
+    {
+        GameObject obj = ObjectPooler.Instance.PoolObject(poolName);
+
+        if (obj)
+        {
+            obj.transform.position = shootingPoint.position;
+
+        }
+        return obj;
     }
 
     public override void Reload()
