@@ -36,7 +36,7 @@ public class Shotgun_test : Weapon_test
             SpawnObjectFromPool("Projectile_Sh", rotation);
         }
 
-        AudioManager_Test.instance.PlayOneShot();
+        AudioManager_Test.instance.PlaySound("Shoot");
     }
 
     public void SpawnObjectFromPool(string poolName, Quaternion rotation)

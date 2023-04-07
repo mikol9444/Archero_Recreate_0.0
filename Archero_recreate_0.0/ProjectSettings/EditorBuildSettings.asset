@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Essentials/4.DamageSystem/test_Damage.unity
+    guid: 12302caf8890bc749a74c6285a793f12
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 4cc2b8f426364374185ac7bfc0373455,
       type: 2}

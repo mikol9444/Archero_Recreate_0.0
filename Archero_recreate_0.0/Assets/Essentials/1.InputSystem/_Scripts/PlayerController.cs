@@ -137,7 +137,40 @@ public class PlayerController : MonoBehaviour
         _jumpTimeoutDelta = JumpTimeout; //reset Jump / Fall Timeout
         _fallTimeoutDelta = FallTimeout;
         AssignAnimationIDs();
+
+
+        // ------------------TROLLING SECTION ----------------------------------------
+        _input._inputReader.MoveEvent += FLIESCHE;
+        _input._inputReader.JumpEvent += JumpLOL;
     }
+    private void OnApplicationQuit()
+    {
+        _input._inputReader.MoveEvent -= FLIESCHE;
+        _input._inputReader.JumpEvent -= JumpLOL;
+    }
+    public bool FLIESCHEEE = false;
+    private void FLIESCHE(Vector2 zero)
+    {
+        if (Vector2.zero == zero)
+        {
+            FLIESCHEEE = false;
+            AudioManager_Test.instance.StopSound("Fliesche");
+        }
+        else if (!FLIESCHEEE)
+        {
+            FLIESCHEEE = true;
+            AudioManager_Test.instance.PlaySound("Fliesche");
+        }
+    }
+    private void JumpLOL(bool jumping)
+    {
+        if (jumping)
+        {
+            AudioManager_Test.instance.PlaySound("Jump");
+
+        }
+    }
+    // ------------------END TROLLING SECTION ----------------------------------------
     private void AssignAnimationIDs()
     {
         _animIDSpeed = Animator.StringToHash("Speed");

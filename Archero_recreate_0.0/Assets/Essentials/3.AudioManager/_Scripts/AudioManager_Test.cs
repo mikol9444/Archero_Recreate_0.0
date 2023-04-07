@@ -2,128 +2,100 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+
+[System.Serializable]
+public struct AudioFile
+{
+    public string NAME;
+    public AudioClip audioClip;
+    [HideInInspector] public AudioSource audioSource;
+    [Range(0f, 3f)] public float pitch;
+    [Range(0f, 1f)] public float volume;
+    public bool isRunning;
+    public bool loop;
+
+}
 public class AudioManager_Test : MonoBehaviour
 {
     public static AudioManager_Test instance;
-    public AudioClip loopClip;
-    public AudioClip musicClip;
-    public AudioClip ambientClip;
-    public AudioClip oneShotClip;
-
-    public bool isLoopOn = true;
-    public bool isMusicOn = true;
-    public bool isAmbientOn = true;
-
-
-    private AudioSource loopSouce;
-    private AudioSource musicSource;
-    private AudioSource ambientSource;
-    private AudioSource oneShotSource;
+    [SerializeField] private AudioFile[] audioFiles;
+    private Dictionary<string, int> audioFileIndex = new Dictionary<string, int>();
+    AudioSource[] sources;
 
     private void Awake()
     {
-        if (instance == null)
+        instance = this;
+        sources = new AudioSource[audioFiles.Length];
+        for (int i = 0; i < audioFiles.Length; i++)
         {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
+            audioFileIndex[audioFiles[i].NAME] = i;
+            sources[i] = gameObject.AddComponent<AudioSource>();
+            audioFiles[i].audioSource = sources[i];
+            audioFiles[i].audioSource.clip = audioFiles[i].audioClip;
+            audioFiles[i].audioSource.pitch = audioFiles[i].pitch;
+            audioFiles[i].audioSource.volume = audioFiles[i].volume;
+            audioFiles[i].audioSource.loop = audioFiles[i].loop;
+        }
+        PlaySound("Ambient");
+        PlaySound("Journey");
+    }
+
+    public void PlaySound(string name)
+    {
+        if (audioFileIndex.TryGetValue(name, out int index))
+        {
+            AudioFile audioFile = audioFiles[index];
+            audioFile.isRunning = true;
+            // if (audioFile.isRunning)
+            // {
+            //     // Handle if audio is already playing.
+            // }
+            // else
+            // {
+
+
+            if (audioFile.audioClip != null && audioFile.audioSource != null)
+            {
+                audioFile.audioSource.clip = audioFile.audioClip;
+                audioFile.audioSource.Play();
+            }
+            else
+            {
+                // Handle if audio clip or source is null.
+            }
+            // }
         }
         else
         {
-            Destroy(gameObject);
+            // Handle if audio file with name doesn't exist.
         }
-
-        // Create audio sources
-        loopSouce = gameObject.AddComponent<AudioSource>();
-        loopSouce.clip = loopClip;
-        loopSouce.loop = false;
-
-        musicSource = gameObject.AddComponent<AudioSource>();
-        musicSource.clip = musicClip;
-        musicSource.loop = true;
-
-        ambientSource = gameObject.AddComponent<AudioSource>();
-        ambientSource.clip = ambientClip;
-        ambientSource.loop = true;
-
-        oneShotSource = gameObject.AddComponent<AudioSource>();
-        PlayMusic();
-        PlayAmbient();
     }
-    private void PlayLoop()
+    public void StopSound(string name)
     {
-        loopSouce.Play();
-    }
-
-    private void StopLoop()
-    {
-        loopSouce.Stop();
-    }
-
-    public void ToggleLoop()
-    {
-        PlayLoop();
-        // isLoopOn = !isLoopOn;
-
-        // if (isLoopOn)
-        // {
-        //     PlayLoop();
-        // }
-        // else
-        // {
-        //     StopLoop();
-        // }
-    }
-    private void PlayMusic()
-    {
-
-        musicSource.Play();
-    }
-
-    private void StopMusic()
-    {
-        musicSource.Stop();
-    }
-
-    public void ToggleMusic()
-    {
-        isMusicOn = !isMusicOn;
-
-        if (isMusicOn)
+        if (audioFileIndex.TryGetValue(name, out int index))
         {
-            PlayMusic();
+            AudioFile audioFile = audioFiles[index];
+
+
+            audioFile.isRunning = false;
+
+            if (audioFile.audioSource != null)
+            {
+                audioFile.audioSource.Stop();
+            }
+            else
+            {
+                // Handle if audio source is null.
+                Debug.LogWarning("Audio source is null");
+            }
+
+
         }
         else
         {
-            StopMusic();
+            // Handle if audio file with name doesn't exist.
+            Debug.LogWarning($"File with name {name} doesnt exist");
         }
     }
 
-    private void PlayAmbient()
-    {
-        ambientSource.Play();
-    }
-
-    private void StopAmbient()
-    {
-        ambientSource.Stop();
-    }
-
-    public void ToggleAmbient()
-    {
-        isAmbientOn = !isAmbientOn;
-
-        if (isAmbientOn)
-        {
-            PlayAmbient();
-        }
-        else
-        {
-            StopAmbient();
-        }
-    }
-
-    public void PlayOneShot()
-    {
-        oneShotSource.PlayOneShot(oneShotClip);
-    }
 }

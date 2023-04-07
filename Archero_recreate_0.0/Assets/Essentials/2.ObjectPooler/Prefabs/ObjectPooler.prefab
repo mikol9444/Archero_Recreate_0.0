@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8804168460048778077}
   - component: {fileID: 8804168460048778076}
-  - component: {fileID: 1754264487}
   m_Layer: 0
   m_Name: ObjectPooler
   m_TagString: Untagged
@@ -64,17 +63,3 @@ MonoBehaviour:
     maxPoolSize: 50
     preinstantiateAmount: 0
     expandable: 0
---- !u!114 &1754264487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8804168460048778051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fcd3db0d0e2256a438c0972151b7fb00, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 1
-  spawnPool: default
