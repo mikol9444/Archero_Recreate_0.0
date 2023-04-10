@@ -33,7 +33,7 @@ public class Shotgun_test : Weapon_test
             Quaternion rotation = Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y + angle, transform.eulerAngles.z);
             GameObject obj = SpawnObjectFromPool("Projectile_Sh");
             obj.transform.rotation = rotation;
-            obj.GetComponent<Projectile>().SetVelocity(obj.transform.forward * bulletSpeed);
+            obj.GetComponent<Projectile_Test>().SetVelocity(obj.transform.forward * bulletSpeed);
         }
 
         AudioManager_Test.instance.PlaySound("Shoot2");

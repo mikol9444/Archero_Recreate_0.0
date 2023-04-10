@@ -17,7 +17,7 @@ public class ObjectPooler : MonoBehaviour
     public void TestFunction(bool status)
     {
     }
-
+    //--------------------DEPENDENCY--------------------------------
     private void OnEnable()
     {
         FindObjectOfType<InputManager>()._inputReader.TestEvent += TestFunction;
@@ -28,7 +28,7 @@ public class ObjectPooler : MonoBehaviour
 
         FindObjectOfType<InputManager>()._inputReader.TestEvent -= TestFunction;
     }
-
+    //--------------------DEPENDENCY--------------------------------
     private void Initialize()
     {
         // PREINITIALIZE Prefab amount from each pool and Add the pool name and index to the dictionary

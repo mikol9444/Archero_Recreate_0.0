@@ -13,6 +13,7 @@ public struct AudioFile
     [Range(0f, 1f)] public float volume;
     public bool isRunning;
     public bool loop;
+    public bool playOnStart;
 
 }
 public class AudioManager_Test : MonoBehaviour
@@ -36,8 +37,13 @@ public class AudioManager_Test : MonoBehaviour
             audioFiles[i].audioSource.volume = audioFiles[i].volume;
             audioFiles[i].audioSource.loop = audioFiles[i].loop;
         }
-        PlaySound("Ambient");
-        PlaySound("Music");
+        foreach (var item in audioFiles)
+        {
+            if (item.playOnStart)
+            {
+                PlaySound(item.NAME);
+            }
+        }
     }
 
     public void PlaySound(string name)

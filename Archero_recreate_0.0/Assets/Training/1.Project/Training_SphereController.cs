@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-//Um das alte InputSystem zu nutzen soll die auskommentiete Klasse unten verwendet werden und die aktualle (ganz unten) soll gelöscht oder auskommentiert werden.
+//Um das alte InputSystem zu nutzen soll die auskommentiete Klasse unten verwendet werden und die ganz unten soll gelöscht oder auskommentiert werden.
 
 // public class Training_SphereController : MonoBehaviour
 // {

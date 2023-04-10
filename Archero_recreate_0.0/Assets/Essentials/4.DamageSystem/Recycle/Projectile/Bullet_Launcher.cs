@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet_Launcher : Projectile
+public class Bullet_Launcher : Projectile_Test
 {
     public override void Fire()
     {

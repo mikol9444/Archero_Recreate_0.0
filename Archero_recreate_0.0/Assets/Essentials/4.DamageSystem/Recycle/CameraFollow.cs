@@ -4,35 +4,44 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform playerTransform;
-    public float minZ = -10f;
-    public float maxZ = 10f;
-    public float minX = -10f;
-    public float maxX = 10f;
+    [SerializeField] private Transform playerTransform;
+    [SerializeField] private Vector2 xBounds = new Vector3(-10f, 10f);
+    [SerializeField] private Vector2 zBounds = new Vector3(-10f, 10f);
+
+    private Vector3 _offset;
+    public Color gizmoColor = Color.red;
+
+    private void Start()
+    {
+        // Calculate the initial offset between the camera and player
+        _offset = transform.position - playerTransform.position;
+    }
 
     private void LateUpdate()
     {
-        // Get the current position of the camera
-        Vector3 pos = transform.position;
+        // Calculate the desired position of the camera based on the player's position and offset
+        Vector3 desiredPosition = playerTransform.position + _offset;
 
-        // Set the Z position of the camera to the player's Z position
-        pos.z = playerTransform.position.z;
-        pos.x = playerTransform.position.x;
+        // Clamp the desired position to the given bounds
+        float clampedX = Mathf.Clamp(desiredPosition.x, xBounds.x, xBounds.y);
+        float clampedZ = Mathf.Clamp(desiredPosition.z, zBounds.x, zBounds.y);
+        desiredPosition = new Vector3(clampedX, desiredPosition.y, clampedZ);
 
-        // Clamp the Z position to the given bounds
-        pos.z = Mathf.Clamp(pos.z, minZ, maxZ);
-        pos.x = Mathf.Clamp(pos.x, minX, maxX);
-
-        // Set the new camera position
-        transform.position = pos;
+        // Set the position of the camera to the desired position
+        transform.position = desiredPosition;
     }
 
     private void OnDrawGizmosSelected()
     {
         // Draw the camera bounds as gizmos
-        Gizmos.color = Color.red;
-        Gizmos.DrawLine(new Vector3(0f, .5f, minZ), new Vector3(0f, .5f, maxZ));
-        Gizmos.color = Color.blue;
-        Gizmos.DrawLine(new Vector3(minX, .5f, 0f), new Vector3(maxX, .5f, 0f));
+        Gizmos.color = gizmoColor;
+
+        // Gizmos.DrawLine(new Vector3(xBounds.x, 0, zBounds.x), new Vector3(xBounds.x, 0, zBounds.y));
+        // Gizmos.DrawLine(new Vector3(xBounds.x, 0, zBounds.y), new Vector3(xBounds.y, 0, zBounds.y));
+        // Gizmos.DrawLine(new Vector3(xBounds.y, 0, zBounds.y), new Vector3(xBounds.y, 0, zBounds.x));
+        // Gizmos.DrawLine(new Vector3(xBounds.y, 0, zBounds.x), new Vector3(xBounds.x, 0, zBounds.x));
+        Vector3 center = new Vector3((xBounds.x + xBounds.y) / 2f, 0.15f, (zBounds.x + zBounds.y) / 2f);
+        Vector3 size = new Vector3(xBounds.y - xBounds.x, 0.15f, zBounds.y - zBounds.x);
+        Gizmos.DrawCube(center, size);
     }
 }

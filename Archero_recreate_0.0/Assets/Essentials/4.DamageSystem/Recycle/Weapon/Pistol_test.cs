@@ -31,7 +31,7 @@ public class Pistol_test : Weapon_test
         {
             obj.transform.position = shootingPoint.position;
             obj.transform.forward = transform.forward;
-            obj.GetComponent<Projectile>().SetVelocity(transform.forward * bulletSpeed);
+            obj.GetComponent<Projectile_Test>().SetVelocity(transform.forward * bulletSpeed);
         }
         return obj;
     }

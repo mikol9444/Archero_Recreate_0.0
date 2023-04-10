@@ -56,7 +56,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c452a3ac392bc949aca424f556e2a98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _inputReader: {fileID: 11400000, guid: 96cfd2e1cf3795c41bb4a2c20d181a17, type: 2}
+  _inputReader: {fileID: 11400000, guid: dd18f6be7f284f241aa14494e883ea21, type: 2}
   move: {x: 0, y: 0}
   look: {x: 0, y: 0}
   jump: 0
@@ -131,6 +131,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6618632173025058346}
     m_Modifications:
+    - target: {fileID: 5240417359897593101, guid: 162379d761964e54a8ee378b04a297e6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2d661ccc83a1f54dbb51b70dc5070b9,
+        type: 3}
+    - target: {fileID: 5240417359897593101, guid: 162379d761964e54a8ee378b04a297e6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5240417359897593102, guid: 162379d761964e54a8ee378b04a297e6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -526,6 +537,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6618632173025058346}
     m_Modifications:
+    - target: {fileID: 2323989628275817564, guid: 449f5f21f3563aa408808f8951e3a18f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 130
+      objectReference: {fileID: 0}
+    - target: {fileID: 2323989628275817564, guid: 449f5f21f3563aa408808f8951e3a18f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 130
+      objectReference: {fileID: 0}
     - target: {fileID: 6205378888005446764, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
       propertyPath: m_Name
@@ -549,32 +570,32 @@ PrefabInstance:
     - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.8
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.9
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
       value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
+        type: 3}
       propertyPath: m_SizeDelta.x
-      value: 236.03589
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 236.03589
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6205378888005446765, guid: 449f5f21f3563aa408808f8951e3a18f,
         type: 3}
@@ -635,6 +656,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205378888005446767, guid: 449f5f21f3563aa408808f8951e3a18f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205378888005446767, guid: 449f5f21f3563aa408808f8951e3a18f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6205378888005446767, guid: 449f5f21f3563aa408808f8951e3a18f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 449f5f21f3563aa408808f8951e3a18f, type: 3}

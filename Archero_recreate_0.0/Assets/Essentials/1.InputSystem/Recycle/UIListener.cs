@@ -26,19 +26,23 @@ public class UIListener : MonoBehaviour
     {
         InputManager.Instance._inputReader.MoveEvent -= UpdateMoveText;
         InputManager.Instance._inputReader.LookEvent -= UpdateLookText;
-
         InputManager.Instance._inputReader.JumpEvent -= UpdateJumpImage;
         InputManager.Instance._inputReader.SprintEvent -= UpdateSprintImage;
         InputManager.Instance._inputReader.PauseEvent -= UpdatePauseImage;
         InputManager.Instance._inputReader.TestEvent -= UpdateTestImage;
     }
+    public void Activate()
+    {
+        GameObject obj = transform.GetChild(0).gameObject;
+        obj.SetActive(!obj.activeInHierarchy);
+    }
     public void UpdateMoveText(Vector2 dir)
     {
-        moveText.text = $"Movement X: {dir.x:F2} Y: {dir.y:F2}"; // Show only 2 decimals after Commata
+        moveText.text = $"  ({dir.x:F2},{dir.y:F2})"; // Show only 2 decimals after Commata
     }
     public void UpdateLookText(Vector2 dir)
     {
-        lookText.text = $"Looking' X: {dir.x:F2} Y: {dir.y:F2}"; // Show only 2 decimals after Commata
+        lookText.text = $"  ({dir.x:F2},{dir.y:F2})"; // Show only 2 decimals after Commata
     }
     public void UpdateJumpImage(bool status) => JumpImage.color = status ? Color.green : Color.red;
     public void UpdateSprintImage(bool status) => SprintImage.color = status ? Color.green : Color.red;
